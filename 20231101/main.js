@@ -45,3 +45,6 @@ let age = '30';
 let favSport = 'Skateboarding';
 
 console.log(`My name is ${name} and I'am ${age} years old. My favorite sport is ${favSport}`);
+
+
+// console.log(typeof console);
