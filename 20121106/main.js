@@ -272,12 +272,12 @@
 
 let passExam = (studentName, score, max) => {
      if(score > max/2){
-         console.log(`${studentName} är godkänd`)
+         console.log(`${studentName} är godkänd`);
      } else {
-         console.log(`${studentName} är underkänd`)
+         console.log(`${studentName} är underkänd`);
      }
  };
-
+ 
  passExam('Simon', 50, 100);
 
 // 1.b Biologilärarna William och Leo vill också ha en liknande funktion, men de önskar ha tydligare betygsättning. 
