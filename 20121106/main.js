@@ -270,15 +270,15 @@
 // De har efterfrågat en funktion som tar emot tre argument - namn på elev, elevens poäng, och maxpoäng för provet. 
 // Om antal poäng är över 50% av maxpoäng, skriv ut i konsolen “ NAMN är godkänd.” Annars skriv ut “NAMN är underkänd” (NAMN = elevens namn).
 
-// let passExam = (studentName, score, max) => {
-//     if(score > max/2){
-//         console.log(`${studentName} är godkänd`)
-//     } else {
-//         console.log(`${studentName} är underkänd`)
-//     }
-// };
+let passExam = (studentName, score, max) => {
+     if(score > max/2){
+         console.log(`${studentName} är godkänd`)
+     } else {
+         console.log(`${studentName} är underkänd`)
+     }
+ };
 
-// passExam('Simon', 50, 100);
+ passExam('Simon', 50, 100);
 
 // 1.b Biologilärarna William och Leo vill också ha en liknande funktion, men de önskar ha tydligare betygsättning. 
 // Om eleven har över 50% rätt ska de ha betyget E, om de har över 75% ska de få betyget C, och om de har över 95% rätt ska de få betyget A. 
