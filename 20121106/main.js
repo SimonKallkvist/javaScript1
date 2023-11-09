@@ -270,61 +270,60 @@
 // De har efterfrågat en funktion som tar emot tre argument - namn på elev, elevens poäng, och maxpoäng för provet. 
 // Om antal poäng är över 50% av maxpoäng, skriv ut i konsolen “ NAMN är godkänd.” Annars skriv ut “NAMN är underkänd” (NAMN = elevens namn).
 
-let passExam = (studentName, score, max) => {
-     if(score > max/2){
-         console.log(`${studentName} är godkänd`);
-     } else {
-         console.log(`${studentName} är underkänd`);
-     }
- };
+ let passExam = (studentName, score, max) => {
+      if(score > max/2){
+          console.log(`${studentName} är godkänd`);
+      } else {
+          console.log(`${studentName} är underkänd`);
+      }  
+    };
  
- passExam('Simon', 50, 100);
+  passExam('Simon', 50, 100);
 
 // 1.b Biologilärarna William och Leo vill också ha en liknande funktion, men de önskar ha tydligare betygsättning. 
 // Om eleven har över 50% rätt ska de ha betyget E, om de har över 75% ska de få betyget C, och om de har över 95% rätt ska de få betyget A. 
 // Om de får under 50% ska de få icke-godkänt (F).
 
-// let passExam2 = (studentName, score, max) => {
-//     if(score > max*0.95){
-//         console.log(`${studentName} fick A på provet`);
-//     } else if (score > max*0.75) {
-//         console.log(`${studentName} fick B på provet`);
-//     }else if (score > max*0.5) {
-//         console.log(`${studentName} fick C på provet`);
-//     }else {
-//         console.log(`${studentName} fick F på provet`);
-//     }
-// };
+ let passExam2 = (studentName, score, max) => {
+     if(score > max*0.95){
+        console.log(`${studentName} fick A på provet`);
+    } else if (score > max*0.75) {
+        console.log(`${studentName} fick C på provet`);
+    }else if (score > max*0.5) {
+        console.log(`${studentName} fick E på provet`);
+    }else {
+        console.log(`${studentName} fick F på provet`);
+    } };
 
-// passExam2('Simon', 75, 100);
+ passExam2('Simon', 76, 100);
 
 // 1.c (Svår) IT-lärarna Linar och Pavel tycker om att se hur deras klasser presterar som grupp. 
 // Deras prov har alltid 100 som max antal poäng, så de vill ha en funktion som tar in en array med olika poäng, 
 // och returnerar en text med hur många som fått betygen A,C,E samt F (enligt ovanstående betygskriterier).
 
-// let scores = [51,51,76,76,96,96,10,10];
+ let scores = [51,51,76,76,96,96,10,10];
 
-// let testResults = (testScores) => {
-//     let gradeA = [];
-//     let gradeC = [];
-//     let gradeE = [];
-//     let gradeF = [];
-//     for(let i = 0; i < testScores.length; i++){
-//         if(testScores[i] > 95){
-//                 gradeA.push(testScores[i]);
-//             } else if (testScores[i] > 75){
-//                 gradeC.push(testScores[i]);
-//             }else if (testScores[i] > 50){
-//                 gradeE.push(testScores[i]);
-//             }else {
-//                 gradeF.push(testScores[i]);
-//             }
-//     };
+ let testResults = (testScores) => {
+     let gradeA = [];
+     let gradeC = [];
+     let gradeE = [];
+     let gradeF = [];
+     for(let i = 0; i < testScores.length; i++){
+         if(testScores[i] > 95){
+                 gradeA.push(testScores[i]);
+             } else if (testScores[i] > 75){
+                 gradeC.push(testScores[i]);
+             }else if (testScores[i] > 50){
+                 gradeE.push(testScores[i]);
+             }else {
+                 gradeF.push(testScores[i]);
+            }
+     };
 
-//     console.log(`${gradeA.length} students got an A! ${gradeC.length} students got an C! ${gradeE.length} students got an E! ${gradeF.length} students got an F!`)
-// };
+     return `${gradeA.length} students got an A! ${gradeC.length} students got a C! ${gradeE.length} students got an E! ${gradeF.length} students got a F!`;
+ };
 
-// testResults(scores);
+ console.log(testResults(scores));
 
 
 
@@ -332,41 +331,42 @@ let passExam = (studentName, score, max) => {
 // För att se om siffrorna stämmer, vill de gärna ha en funktion som tar in två siffror som argument
 //  - debet och kredit - och ser om dessa är lika stora. Om de är lika stora, skriv ut i konsolen att dessa är lika stora. 
 //  Om debet är större än kredit, skriv ut att så är fallet. Om kredit är större, ska detta skrivas ut istället.
-// let debetKredit = (debet, kredit) => {
-//     if(debet > kredit) {
-//         console.log('Debet is larger than kredit');
-//     } else if(debet < kredit){
-//         console.log('Debit is smaller than kredit')
-//     }else {
-//         console.log('Debit and kredit are the same!')
-//     }
-// }
 
-// debetKredit(30,50);
+ let debetKredit = (debet, kredit) => {
+     if(debet > kredit) {
+         console.log('Debet is larger than kredit');
+     } else if(debet < kredit){
+         console.log('Debit is smaller than kredit');
+     }else {
+         console.log('Debit and kredit are the same!');
+     }
+ };
+
+ debetKredit(30,50);
 
 // 2.B (Svår) Anna och Sofie är chefer på företaget Quiz Champions AB, och önskar köpa in funktionen från uppgift 2 till deras företag. 
 // Dock har de en massor av kostnader och tillgångar, så funktionen behöver bli lite mer komplex. 
 // Istället för två siffror, ta in två arrayer som argument - en array för debet och en array för kredit. 
 // Räkna ut den totala summan av dessa arrays. Om summan för bägge arrays är likadana, skriv ut “Balansrapport godkänd”, 
 // annars skriv ut “Debet och kredit har inte samma värden.”
-// let debitArray = [1,10,3,4,8];
-// let kreditArray = [1,9,3,4,8];
+ let debitArray = [1,10,3,4,8];
+ let kreditArray = [1,9,3,4,8];
 
-// let quizChampionsAb = (debit, kredit) => {
-//     let reducedDebit = debit.reduce((a,b) => a*b);
-//     let reducedKredit = kredit.reduce((a,b) => a*b);
+ let quizChampionsAb = (debit, kredit) => {
+     let reducedDebit = debit.reduce((a,b) => a+b);
+     let reducedKredit = kredit.reduce((a,b) => a+b);
 
-//     if(reducedDebit < reducedKredit){
-//         console.log(`The debitside: "${reducedDebit}" is smaller than the kreditside: "${reducedKredit}"`);
-//     } else if (reducedDebit > reducedKredit){
-//         console.log(`The debitside: "${reducedDebit}" is larger than the kreditside: "${reducedKredit}"`);
-//     } else {
-//         console.log(`The debitside: "${reducedDebit}" is the same as the kreditside: "${reducedKredit}"`);
-//     }
+     if(reducedDebit < reducedKredit){
+         console.log(`The debitside: "${reducedDebit}" is smaller than the kreditside: "${reducedKredit}"`);
+     } else if (reducedDebit > reducedKredit){
+         console.log(`The debitside: "${reducedDebit}" is larger than the kreditside: "${reducedKredit}"`);
+     } else {
+         console.log(`The debitside: "${reducedDebit}" is the same as the kreditside: "${reducedKredit}"`);
+     }
     
-// }
+ }
 
-// quizChampionsAb(debitArray,kreditArray);
+ quizChampionsAb(debitArray,kreditArray);
 
 
 // 3.a Systemadministratörer Stina och Viktoria har blivit efterfrågade att skicka data om skolan till möjliga sponsorer. 
@@ -382,24 +382,24 @@ let passExam = (studentName, score, max) => {
 // Lista på locations = Solna, Ankeborg, Duckville(array)
 // Maskot = Namn: Miles, ålder: 1, är söt: true (objekt)
 
-// let schoolInfo = {
-//     name: 'Ankademin', 
-//     sumOfStudents: 38,
-//     sumOfTeachers: 10,
-//     schoolMotto: 'Anyone can code!',
-//     favTeacher: 'Brandon',
-//     isBestSchool: false,
-//     dogFriendly: true,
-//     snakeFriendly: false,
-//     locations: ['Solna', 'Ankeborg','Duckville'],
-//     mascot: {
-//         mName: 'Miles',
-//         age: 1, 
-//         isCute: true
-//     }
-// }
+ let schoolInfo = {
+     name: 'Ankademin', 
+     sumOfStudents: 38,
+     sumOfTeachers: 10,
+     schoolMotto: 'Anyone can code!',
+     favTeacher: 'Brandon',
+     isBestSchool: false,
+     dogFriendly: true,
+     snakeFriendly: false,
+     locations: ['Solna', 'Ankeborg','Duckville'],
+     mascot: {
+         mName: 'Miles',
+         age: 1, 
+         isCute: true
+     }
+ };
 
-// console.log(schoolInfo);
+ console.log(schoolInfo);
 
 // 3.b Föräldrarna Ludvig, Lukas, Noah och Saga efterfrågar information om skolan, för att avgöra om de ska placera sina barn där. 
 // Skapa en funktion som heter sendSchoolInfo som tar in ett objekt, och skriver ut ett meddelande i konsolen med skolans namn, antalet lärare och antalet elever. 
@@ -407,52 +407,56 @@ let passExam = (studentName, score, max) => {
 // OM det är världens bästa skola ska det även skrivas ut ett meddelande där det står “This is the best school in Sweden!” 
 // annars skriv ut ett meddelande där det står “It’s not the best school in Sweden, but still good!”
 
-// let sendSchoolInfo = (object) => {
-//     let schoolInfo = `This school is ${object.name}! It has ${object.sumOfTeachers} teachers and ${object.sumOfStudents} students! `;
+ let sendSchoolInfo = (object) => {
 
-//     if(object.snakeFriendly === false){
-//         schoolInfo += "Unfortunately the school is not Snake friendly. ";
-//     }
-//     if(object.isBestSchool === true){
-//         schoolInfo += `This is the best school in Sweden! `;
-//     } else {
-//         schoolInfo += `It’s not the best school in Sweden, but still good! `
-//     }
+    // "De-structuring" av objekt kan skrivas tex: let {name, sumOfTeachers} = object; detta letar efter en key som heter "name" och "sumOfTeachers" sätter den till en lokal variabel av let name; och let sumOfTeachers;
+    // ternary operators W ? T : F, te.x console.log(5 < 6 ? 'True' : 'false')
 
-//     return schoolInfo;
-// }
+     let schoolInfo = `This school is ${object.name}! It has ${object.sumOfTeachers} teachers and ${object.sumOfStudents} students! `;
 
-// console.log(sendSchoolInfo(schoolInfo));
+     if(object.snakeFriendly === false){
+         schoolInfo += "Unfortunately the school is not Snake friendly. ";
+     }
+     if(object.isBestSchool === true){
+         schoolInfo += `This is the best school in Sweden! `;
+     } else {
+         schoolInfo += `It’s not the best school in Sweden, but still good! `;
+     }
+
+     return schoolInfo;
+ };
+
+ console.log(sendSchoolInfo(schoolInfo));
 
 // 3.c Investerarna Hampus och Olivia efterfrågar information om skolans maskot, för att avgöra om de vill sponsra skolans e-sportlag. 
 // Skapa en funktion som heter sendMascotInfo som tar in ett objekt. Den ska skriva ut objektets namn och ålder i konsolen. 
 // OM maskoten är söt, skriv även ut detta i konsolen. (Om maskoten inte är söt, ska inget mer skrivas ut.) 
 // Kör funktionen och skicka med maskot-objektet inuti skol-objektet som argument.
 
-// let sendMascotInfo = (object) => {
-//     let mascotInfo = `${object.mascot['mName']} is the name and is ${object.mascot['age']} year old! `;
+//  let sendMascotInfo = (object) => {
+//      let mascotInfo = `${object.mascot['mName']} is the name and is ${object.mascot['age']} year old! `;
 
-//     if(object.mascot['isCute'] == true){
-//         mascotInfo += `And it is very cute!`;
-//     }
+//      if(object.mascot['isCute'] == true){
+//          mascotInfo += `And it is very cute!`;
+//      }
 
-//     return mascotInfo;
-// }
+//      return mascotInfo;
+//  }
 
-// console.log(sendMascotInfo(schoolInfo));
+//  console.log(sendMascotInfo(schoolInfo));
 
 
-// let sendMascotInfo = (object) => {
-//     let mascotInfo = `${object.mName} is the name of the mascot and is ${object.age} year old! `;
+ let sendMascotInfo = (object) => {
+     let mascotInfo = `${object.mName} is the name of the mascot and is ${object.age} year old! `;
 
-//     if(object.isCute == true){
-//         mascotInfo += `And it is very cute!`;
-//     }
+     if(object.isCute == true){
+         mascotInfo += `And it is very cute!`;
+     }
 
-//     return mascotInfo;
-// }
+     return mascotInfo;
+ };
 
-// console.log(sendMascotInfo(schoolInfo.mascot));
+ console.log(sendMascotInfo(schoolInfo.mascot));
 
 
 
@@ -460,14 +464,14 @@ let passExam = (studentName, score, max) => {
 // för att bestämma vilket lag som börjar med boll. 
 // Gör en funktion som slumpar fram krona eller klave i konsolen (sannolikheten ska vara 50% för bägge scenarios).
 
-// let coin = Math.floor(Math.random() * (2 - 1 + 1)) + 1; 
+ let coin = Math.floor(Math.random() * (2 - 1 + 1)) + 1; 
 
-// let headOrTail = (flip) => {
-//     if(flip % 2 === 0){
-//         console.log('It´s heads!');
-//     } else {
-//         console.log('It`s Tails');
-//     }
-// }
+ let headOrTail = (flip) => {
+     if(flip % 2 === 0){
+         console.log('It´s heads!');
+     } else {
+         console.log('It`s Tails');
+     }
+ }
 
-// headOrTail(coin);
+ headOrTail(coin);
