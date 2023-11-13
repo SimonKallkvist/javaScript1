@@ -28,8 +28,9 @@ frukostMacka.innerText = "Frukostmacka 15kr";
 
 // 5. Lägg in en sista produkt i det tomma li-elementet samt ett span-element med pris (se övriga produkter).
 
-let lastItem = document.querySelector("ul");
-lastItem.lastElementChild.innerHTML = `Kaka <span class='pris'></span>`;
+let ulList = document.querySelector("ul");
+
+ulList.lastElementChild.innerHTML = `Kaka <span class='pris'>19kr</span>`;
 
 // let lastItem = document.getElementsByClassName(".produkter").lastElementChild;
 // lastItem.innerHTML = `Kaka <span class='pris'></span>`;
