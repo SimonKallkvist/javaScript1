@@ -25,7 +25,10 @@ todoBtn.addEventListener("click", () => {
 });
 
 actualList.addEventListener("click", (e) => {
-  if ((e.target.tagName = "button")) {
+  if ((e.target.tagName = "BUTTON")) {
+    e.target.parentElement.remove();
+    todoArr.pop();
+  }else {
     e.target.parentElement.remove();
     todoArr.pop();
   }
@@ -41,8 +44,8 @@ function addNumbers() {
   let result = +num1 + +num2;
   res.innerText = result;
 
-  num1 = "";
-  num2 = "";
+  num1.innerText = "";
+  num2.value = "";
 }
 
 function subNumbers() {
@@ -71,4 +74,34 @@ function multiNumbers() {
 
 // Skapa en knapp för att subtrahera dessa tal med varandra (tal1 - tal2). Om resultatet blir mindre än 0, skriv ut ett snällt felmeddelande i webbläsaren, där det står tydligt vad användaren gjort fel och behöver rätta till för att få det att fungera.
 
-// Låt användaren skriva in en siffra mellan 0-10 i ett input-fält. Om talet är mindre än 4, färga den röd. Om den är mellan 4-7, färga talet gult. Om talet är över 7, färga den grön. Om talet är över 11 eller under 0, skriv ut ett felmeddelande där du beskriver vad användaren gjort fel (dvs om talet är för stort/litet).
+// Låt användaren skriva in en siffra mellan 0-10 i ett input-fält. Om talet är mindre än 4, färga den röd. 
+// Om den är mellan 4-7, färga talet gult. Om talet är över 7, färga den grön. 
+// Om talet är över 11 eller under 0, skriv ut ett felmeddelande där du beskriver vad användaren 
+// gjort fel (dvs om talet är för stort/litet).
+
+
+let input = document.querySelector('#colorMyNumber');
+let coloredNumber = document.getElementById('coloredNumber');
+
+input.addEventListener(('change'), (e) => {
+  coloredNumber.textContent = e.target.value;
+  coloredNumber.style.fontSize = '10rem';
+  if (e.target.value >= 0 && e.target.value <= 4 ){
+    coloredNumber.style.color = 'red';
+  }else if(e.target.value >= 4 && e.target.value <= 7 ){
+    coloredNumber.style.color = 'yellow';
+  }else if(e.target.value > 7 && e.target.value <= 10 ){
+    coloredNumber.style.color = 'green';
+  }else if(e.target.value < 0){
+    coloredNumber.textContent = 'Number has to be larger than 0!';
+    coloredNumber.style.fontSize = '2rem';
+    coloredNumber.style.color = 'black';
+  }else {
+    coloredNumber.textContent = 'Number has to be smaller than 10!';
+    coloredNumber.style.fontSize = '2rem';
+    coloredNumber.style.color = 'black';
+
+  }
+    
+  }
+);

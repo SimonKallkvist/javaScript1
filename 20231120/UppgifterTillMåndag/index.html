@@ -11,19 +11,31 @@
   <body>
     <div class="todoList">
       <h2>Todo list</h2>
-      <input type="text" id="todoItems" placeholder="Add todo-things" />
-      <button id="addToList">Add to-dos!</button>
+      <div>
+        <input type="text" id="todoItems" placeholder="Add todo-things" />
+        <button id="addToList">Add to-dos!</button>
+      </div>
 
       <ul id="actualList"></ul>
     </div>
 
     <div class="calculator">
-      <input type="text" id="num1" placeholder="write a number plz" />
-      <input type="text" id="num2" placeholder="write a number plz" />
-      <button id="add" onclick="addNumbers()">Addidtion</button>
-      <button id="sub" onclick="subNumbers()">Subratceatojn</button>
-      <button id="mult" onclick="multiNumbers()">Multiplication</button>
+      <div>
+        <input type="text" id="num1" placeholder="write a number plz" />
+        <input type="text" id="num2" placeholder="write a number plz" />
+      </div>
+      <div>
+        <button id="add" onclick="addNumbers()">Addidtion</button>
+        <button id="sub" onclick="subNumbers()">Subratceatojn</button>
+        <button id="mult" onclick="multiNumbers()">Multiplication</button>
+      </div>
       <h3 id="results">Resultat</h3>
+    </div>
+
+    <div class="colorNumbers">
+      <input type="text" id="colorMyNumber" placeholder="Write a number!" />
+      <h3>What is your number color?</h3>
+      <h2 id="coloredNumber">?</h2>
     </div>
   </body>
 </html>
