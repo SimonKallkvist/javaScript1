@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Espot-turnering</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="teamContainer">
+      <h1 class="headerTag">Hockey-turnering</h1>
+      <div class="teamName">
+        <div class="leftSide">
+          <input type="text" placeholder="TeamName" id="lagA" />
+          <button id="changeNameA">Change name</button>
+          <h2 id="lagAName">Lag A</h2>
+          <ul id="teamA"></ul>
+        </div>
+        <div class="rightSide">
+          <input type="text" placeholder="TeamName" id="lagB" />
+          <button id="changeNameB">Change name</button>
+          <h2 id="lagBName">Lag B</h2>
+          <ul id="teamB"></ul>
+        </div>
+      </div>
+      <div class="addPlayer">
+        <input type="text" id="addPlayer" placeholder="Add a Player" />
+        <button id="addPlayerBtn">Add players to the team</button>
+      </div>
+    </div>
+    <div class="popUp">
+      <h2>Change player name</h2>
+      <input type="text" id="editPlayer" placeholder="Change player name" />
+      <button class="nameChange">Change name</button>
+    </div>
+  </body>
+</html>
