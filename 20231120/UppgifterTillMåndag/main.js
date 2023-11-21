@@ -16,7 +16,7 @@ todoBtn.addEventListener("click", () => {
     newLi.innerText = todoItem;
     newLi.appendChild(newBtn);
     actualList.append(newLi);
-    todoItem.value = "";
+
     todoArr.push(1);
     newBtn.addEventListener("click", (e) => {
       if ((e.target.tagName = "BUTTON")) {
@@ -24,57 +24,46 @@ todoBtn.addEventListener("click", () => {
         todoArr.pop();
       }
     });
+
+    document.querySelector("#todoItems").value = "";
   } else {
     alert("TO MANY ITEMS FPR YOUR TINY BRAIN BIIIITCH");
   }
-  console.log(todoArr);
-});
-
-newBtn.addEventListener("click", (e) => {
-  if ((e.target.tagName = "BUTTON")) {
-    e.target.parentElement.remove();
-    todoArr.pop();
-  }
-  // else {
-  //     e.target.parentElement.remove();
-  //     todoArr.pop();
-  //   }
 });
 
 // Skapa en simpel kalkylator. Det ska finnas två input-fält som tar in varsitt nummer, och när användaren fyllt i bägge och klickar på en knapp ska dessa två värdena adderas med varandra (+). Visa ut resultatet i DOM:en.
-let res = document.querySelector("#results");
 
 function addNumbers() {
   let num1 = document.querySelector("#num1").value;
   let num2 = document.querySelector("#num2").value;
-
+  let res = document.querySelector("#results");
   let result = +num1 + +num2;
   res.innerText = result;
 
-  num1.innerText = "";
-  num2.value = "";
+  // document.querySelector("#num1").value = "";
+  // document.querySelector("#num2").value = "";
 }
 
 function subNumbers() {
   let num1 = document.querySelector("#num1").value;
   let num2 = document.querySelector("#num2").value;
-
+  let res = document.querySelector("#results");
   let result = +num1 - +num2;
   res.innerText = result;
 
-  num1 = "";
-  num2 = "";
+  // document.querySelector("#num1").value = "";
+  // document.querySelector("#num2").value = "";
 }
 
 function multiNumbers() {
   let num1 = document.querySelector("#num1").value;
   let num2 = document.querySelector("#num2").value;
-
+  let res = document.querySelector("#results");
   let result = +num1 * +num2;
   res.innerText = result;
 
-  num1 = "";
-  num2 = "";
+  // document.querySelector("#num1").value = "";
+  // document.querySelector("#num2").value = "";
 }
 
 // Skapa ytterligare en knapp för att multiplicera dessa tal med varandra.
@@ -90,21 +79,22 @@ let input = document.querySelector("#colorMyNumber");
 let coloredNumber = document.getElementById("coloredNumber");
 
 input.addEventListener("change", (e) => {
-  coloredNumber.textContent = e.target.value;
+  let inputValue = parseFloat(e.target.value); // Convert the input value to a number
+
+  coloredNumber.textContent = inputValue;
   coloredNumber.style.fontSize = "10rem";
-  if (e.target.value >= 0 && e.target.value <= 4) {
+
+  if (inputValue >= 0 && inputValue <= 4) {
     coloredNumber.style.color = "red";
-  } else if (e.target.value >= 4 && e.target.value <= 7) {
+  } else if (inputValue > 4 && inputValue <= 7) {
     coloredNumber.style.color = "yellow";
-  } else if (e.target.value > 7 && e.target.value <= 10) {
+  } else if (inputValue > 7 && inputValue <= 10) {
     coloredNumber.style.color = "green";
-  } else if (e.target.value < 0) {
-    coloredNumber.textContent = "Number has to be larger than 0!";
-    coloredNumber.style.fontSize = "2rem";
-    coloredNumber.style.color = "black";
   } else {
-    coloredNumber.textContent = "Number has to be smaller than 10!";
-    coloredNumber.style.fontSize = "2rem";
+    coloredNumber.textContent = "Number must be between 0 and 10!";
     coloredNumber.style.color = "black";
+    coloredNumber.style.fontSize = "2rem";
   }
+
+  document.getElementById("coloredNumber").value = "";
 });
