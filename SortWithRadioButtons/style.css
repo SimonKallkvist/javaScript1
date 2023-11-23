@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0084ff, #e7c19f);
+}
+
+.container {
+  width: 100%;
+  max-width: 70rem;
+  background: #ffffff30;
+  padding: 2rem;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.171);
+  margin: 5rem auto 0;
+  border-radius: 1rem;
+}
+
+.container h1 {
+  margin-bottom: 1rem;
+}
+
+fieldset {
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2rem;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.3), inset 2px 2px rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+}
+
+legend {
+  font-size: 2.4rem;
+  color: #fff;
+  position: relative;
+  top: 1.6rem;
+}
+
+label {
+  margin-right: 1rem;
+}
+
+select {
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}
+
+select option {
+  border-radius: 0;
+  padding: 0.5rem;
+}
+
+.btn {
+  outline: 0;
+  border: 0;
+  padding: 1.5rem 2.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(35deg, orange, red);
+  color: #fff;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 2px 2px 3px lightblue,
+    inset 1px 1px 2px rgba(255, 255, 255, 0.327);
+  transition: box-shadow 200ms ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: inset 2px 2px 3px black;
+}
+
+ul {
+  list-style-type: none;
+  color: #fff;
+  font-size: 2.4rem;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheckBoxes and filters</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Show me the Students!</h1>
+      <input type="checkbox" name="TecherCheck" id="amTeacher" />
+      <label for="TecherCheck">Are you the teacher?</label>
+      <fieldset>
+        <legend>Sort by education!</legend>
+        <input
+          type="radio"
+          value="frontend"
+          name="program"
+          id="frontEnd"
+          checked
+        />
+        <label for="frontEnd">Front End</label>
+        <input type="radio" value="backend" name="program" id="backEnd" />
+        <label for="backEnd">Backend-dev</label>
+        <input type="radio" value="ux" name="program" id="UX" />
+        <label for="UX">UX-design</label>
+        <input type="radio" value="all" name="program" id="all" />
+        <label for="all">All programs</label>
+      </fieldset>
+      <fieldset>
+        <legend>....and city!!</legend>
+        <input
+          type="radio"
+          value="stockholm"
+          name="city"
+          id="stockholmRadio"
+          checked
+        />
+        <label for="stockholmRadio">Stockholm</label>
+        <input type="radio" value="malmö" name="city" id="malmoRadio" />
+        <label for="malmoRadio">Malmö</label>
+        <input type="radio" value="borås" name="city" id="borasRadio" />
+        <label for="borasRadio">Borås</label>
+      </fieldset>
+      <fieldset>
+        <legend>What year?</legend>
+        <label for="year">Choose what year!</label>
+
+        <select name="year" id="year">
+          <option value="one">Year 1</option>
+          <option value="two">Year 2</option>
+        </select>
+      </fieldset>
+      <button class="btn">Filter!</button>
+      <ul class="resultList"></ul>
+    </div>
+  </body>
+</html>
