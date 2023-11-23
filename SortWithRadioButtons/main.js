@@ -41,7 +41,7 @@ let isTeacher = document.querySelector("#amTeacher");
 
 filterBtn.addEventListener("click", () => {
   resultList.innerHTML = "";
-  if (isTeacher.checked) {
+  if (isTeacher) {
     let selectedRadio = document.querySelector('[name="program"]:checked');
     let selectedCity = document.querySelector('[name="city"]:checked');
 
@@ -72,3 +72,37 @@ filterBtn.addEventListener("click", () => {
 });
 
 // -------> Fungerar tror jag men inte så snyggt.
+
+// --------------> FilterMetod för samma typ...
+// let showStudentsBtn = document.querySelector(".btn");
+// let resultsUl = document.querySelector(".resultList");
+
+// showStudentsBtn.addEventListener("click", () => {
+//   resultsUl.innerHTML = "";
+//   let education = document.querySelector("[name='program']:checked").value;
+//   let city = document.querySelector("[name='city']:checked").value;
+//   let isTeacher = document.querySelector("#amTeacher").checked;
+//   let year = document.querySelector("#year").value;
+//   console.log(year);
+//   //Filtrering
+
+//   myArray.filter((elev) => elev.education === "Frontend");
+
+//   let filteredStudents = students.filter((student) => {
+//     return (
+//       (education === "all" || student.utbildning === education) &&
+//       (city === "all" || student.stad === city) &&
+//       (year === "Alla" || +year === student.år)
+//     );
+//   });
+//   //Rendering
+//   if (isTeacher) {
+//     filteredStudents.forEach((student) => {
+//       let li = document.createElement("li");
+//       li.textContent = `Namn: ${student.namn} Utbildning:${student.utbildning} Stad: ${student.stad} År: ${student.år}`;
+//       resultsUl.append(li);
+//     });
+//   } else {
+//     alert("Please confirm that you are a teacher!");
+//   }
+// });
