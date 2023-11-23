@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekt Sort</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="filterBar">
+        <h2>Filter</h2>
+        <button class="showAll">Show All items!</button>
+        <fieldset>
+          <legend>Category</legend>
+          <select name="itemCategory" id="itemSelect">
+            <option value="">Jacka</option>
+            <option value="">Byxa</option>
+            <option value="">Mössa</option>
+          </select>
+        </fieldset>
+        <fieldset class="brandRadio">
+          <legend>Sort by Brand</legend>
+          <div>
+            <input type="radio" name="brand" id="adidas" />
+            <label for="adidas">Adidas</label>
+          </div>
+          <div>
+            <input type="radio" name="brand" id="nike" />
+            <label for="nike">Nike</label>
+          </div>
+          <div>
+            <input type="radio" name="brand" id="gucci" />
+            <label for="gucci">Gucci</label>
+          </div>
+          <div>
+            <input type="radio" name="brand" id="prada" />
+            <label for="prada">Prada</label>
+          </div>
+        </fieldset>
+        <div>
+          <input type="checkbox" name="amRobot" id="amRobot" />
+          <label for="amRobot">Are you a robot?</label>
+        </div>
+
+        <div>
+          <fieldset>
+            <legend>Sort on Colour</legend>
+            <input type="checkbox" name="color" id="black" />
+            <label for="black">Black?</label>
+            <input type="checkbox" name="color" id="red" />
+            <label for="red">Red?</label>
+            <input type="checkbox" name="color" id="pink" />
+            <label for="pink">Pink?</label>
+          </fieldset>
+        </div>
+      </div>
+
+      <!-- ProductGrid start -->
+      <div class="productGrid"></div>
+    </div>
+  </body>
+</html>
