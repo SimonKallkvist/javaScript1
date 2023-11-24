@@ -71,7 +71,7 @@ let productsArr = [
         productImg: 'https://source.unsplash.com/random',
         productPrice: 799,
         productBrand: 'Prada',
-        productCategory: 'Byxa',
+        productCategory: 'ByXa',
         productColorBox: 'Red', 
         
     },
@@ -97,6 +97,14 @@ let productsArr = [
 
 // Global declaration
 let genereateItem = document.querySelector('.generate');
+
+
+
+genereateItem.addEventListener('click', () => {
+    const newProdPrice = Math.floor(Math.random() * 1000) + 1
+    console.log(newProdPrice);
+})
+
 //
 let showAll = document.querySelector('#showAllProducts')
 let removeAll = document.querySelector('#clearGrid');
@@ -123,7 +131,7 @@ showAll.addEventListener('click', () => {
         productImg.style.backgroundImage = `url(${prod.productImg})`;
         //Create product price
         let productPrice = document.createElement('h4');
-        productPrice.textContent = prod.productPrice;
+        productPrice.textContent = prod.productPrice + " kr";
         //create Brand tag
         let productBrand = document.createElement('h5');
         productBrand.textContent = prod.productBrand;
@@ -147,7 +155,90 @@ showAll.addEventListener('click', () => {
 filterProds.addEventListener('click', () => {
     productGrid.innerHTML = '';
 
+    //HÄmta värde fårn isRObot
+    let robotMan = document.querySelector('#amRobot').checked;
+    // ----------> Hämta värden från radio buttons
+    // -------> Spara värdet från dropDown
+    let categoryDrop = document.querySelector('#itemSelect').value;
+    console.log(categoryDrop);
+
+    // ----------> Hämta värdet från Brand radio
+    let brandRadio = document.querySelector("[name='brand']:checked").value;
+    console.log(brandRadio);
+
+     // -------------> Hämta värdet från Color check (och skriv över i ny array).
+     // TODO Gör att den tar in alla valda checkboxes i en ny array och sortera därifrån
+     let colorCheck = document.querySelector("[name='color']:checked").value;
+     console.log(colorCheck);
+
+     let colorBla = document.getElementsByName('color');
+     let multiColor = Array.from(colorBla);
+     console.log(multiColor);
+    let multiColorCheck = multiColor.filter((color) => {
+        return(
+            color.checked
+            )
+    });
+
+    multiColorCheck.forEach((color) => {
+        console.log(color.value);
+    });
+    for(i = 0; multiColorCheck.length < i; i++){
+        console.log(multiColorCheck[i].value);
+    };
+    //  let colorCheckBoxes = Array.from(colorCheck);
+    //  console.log(colorCheckBoxes); colorCheck.toUpperCase()
+
     
+     let filterdProducts = productsArr.filter((prods) => {
+        return ( 
+            (categoryDrop.toUpperCase() === 'ALL' || prods.productCategory.toUpperCase() === categoryDrop.toUpperCase()) &&
+            (brandRadio.toUpperCase() === 'ALL' || prods.productBrand.toUpperCase() === brandRadio.toUpperCase()) &&
+           (colorCheck.toUpperCase() === 'ALL' || prods.productColorBox.toUpperCase() === colorCheck.toUpperCase())
+        );
+     });
+
+     console.log(filterdProducts);
+   
+
+     // Render Grid Items on Screen
+     if(robotMan){
+        if(filterdProducts.length > 0)
+        filterdProducts.forEach((prod) => {
+            let gridItem = document.createElement('div');
+            gridItem.classList.add('productCard');
+            //create the productName
+            let productName = document.createElement('h3');
+            productName.textContent = prod.productName;
+            //Create the product image
+            let productImg = document.createElement('div');
+            productImg.style.backgroundImage = `url(${prod.productImg})`;
+            //Create product price
+            let productPrice = document.createElement('h4');
+            productPrice.textContent = prod.productPrice + " kr";
+            //create Brand tag
+            let productBrand = document.createElement('h5');
+            productBrand.textContent = prod.productBrand;
+            //Create category tag
+            let productCategory = document.createElement('p');
+            productCategory.textContent = prod.productCategory;
+            //Create color heading tag
+            let productColor = document.createElement('h6');
+            productColor.textContent = 'Color';
+            //Create color box showcase
+            let productColorBox = document.createElement('div');
+            productColorBox.classList.add = 'colorBox';
+            productColorBox.style.background = prod.productColorBox;
+    
+            gridItem.append(productName, productImg,productPrice,productBrand,productCategory,productColor,productColorBox);
+            productGrid.appendChild(gridItem);
+        });
+        else {
+            alert('Sorry no items with those Specifics');
+        }
+     }else{
+        alert('You have to be a robot to shop here!');
+     }
 });
 
 

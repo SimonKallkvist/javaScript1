@@ -22,27 +22,32 @@
         <fieldset>
           <legend>Category</legend>
           <select name="itemCategory" id="itemSelect">
-            <option value="">Jacka</option>
-            <option value="">Byxa</option>
-            <option value="">Mössa</option>
+            <option value="All" selected>All</option>
+            <option value="Jacket">Jacka</option>
+            <option value="Byxa">Byxa</option>
+            <option value="Mössa">Mössa</option>
           </select>
         </fieldset>
         <fieldset class="brandRadio">
           <legend>Sort by Brand</legend>
           <div>
-            <input type="radio" name="brand" id="adidas" />
+            <input type="radio" name="brand" id="All" value="All" checked />
+            <label for="All">All</label>
+          </div>
+          <div>
+            <input type="radio" name="brand" id="adidas" value="Adidas" />
             <label for="adidas">Adidas</label>
           </div>
           <div>
-            <input type="radio" name="brand" id="nike" />
+            <input type="radio" name="brand" id="nike" value="Nike" />
             <label for="nike">Nike</label>
           </div>
           <div>
-            <input type="radio" name="brand" id="gucci" />
+            <input type="radio" name="brand" id="gucci" value="Gucci" />
             <label for="gucci">Gucci</label>
           </div>
           <div>
-            <input type="radio" name="brand" id="prada" />
+            <input type="radio" name="brand" id="prada" value="Prada" />
             <label for="prada">Prada</label>
           </div>
         </fieldset>
@@ -54,11 +59,19 @@
         <div>
           <fieldset>
             <legend>Sort on Colour</legend>
-            <input type="checkbox" name="color" id="black" />
+            <input
+              type="checkbox"
+              name="color"
+              id="AllCheck"
+              value="All"
+              checked
+            />
+            <label for="AllCheck">All?</label>
+            <input type="checkbox" name="color" id="black" value="Black" />
             <label for="black">Black?</label>
-            <input type="checkbox" name="color" id="red" />
+            <input type="checkbox" name="color" id="red" value="Red" />
             <label for="red">Red?</label>
-            <input type="checkbox" name="color" id="pink" />
+            <input type="checkbox" name="color" id="pink" value="Pink" />
             <label for="pink">Pink?</label>
           </fieldset>
         </div>
