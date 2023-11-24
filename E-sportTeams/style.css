@@ -101,3 +101,7 @@ li button {
 .popUpShow {
   display: flex;
 }
+
+.selected {
+  background-color: #f0f0f0; /* Highlight color for selected player */
+}

@@ -17,7 +17,8 @@
     <div class="container">
       <div class="filterBar">
         <h2>Filter</h2>
-        <button class="showAll">Show All items!</button>
+        <button class="showAll" id="showAllProducts">Show All items!</button>
+        <button class="showAll" id="clearGrid">Hide all Items!</button>
         <fieldset>
           <legend>Category</legend>
           <select name="itemCategory" id="itemSelect">
@@ -61,10 +62,22 @@
             <label for="pink">Pink?</label>
           </fieldset>
         </div>
+        <button class="generate">Generate item</button>
+        <button class="showAll" id="filterButton">Apply Filters</button>
       </div>
 
       <!-- ProductGrid start -->
-      <div class="productGrid"></div>
+      <div class="productGrid">
+        <!-- <div class="productCard">
+          <h3>Produktnamn</h3>
+          <div></div>
+          <h4>Pris</h4>
+          <h5>Brand</h5>
+          <p>Category</p>
+          <h6>Color</h6>
+          <div></div>
+        </div> -->
+      </div>
     </div>
   </body>
 </html>

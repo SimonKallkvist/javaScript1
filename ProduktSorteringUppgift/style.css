@@ -65,9 +65,15 @@ body {
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.7);
   box-shadow: 2px 2px 3px black, inset 2px 2px white;
-  max-width: 20rem;
+  /* max-width: 20rem; */
   padding: 1.5rem 3.5rem;
   cursor: pointer;
+  transition: box-shadow 150ms ease-in-out;
+}
+
+.showAll:hover {
+  box-shadow: inset 2px 2px black;
+  font-size: 1.3rem;
 }
 
 fieldset {
@@ -82,4 +88,39 @@ select {
 .brandRadio {
   display: flex;
   flex-direction: column;
+}
+
+
+/* ProductCard */
+
+.productCard {
+  max-height: 25rem;
+  min-height: 25rem;
+  padding: .5rem;
+  background: #fff;
+  border-radius: .5rem;
+}
+
+.productCard div:first-of-type {
+  width: 100%;
+  height: 50%;
+  border-radius: .5rem;
+  /* background-image: url(https://source.unsplash.com/random); */
+  background-size: cover;
+}
+
+.productCard div:last-of-type {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid black;
+  /* background: red; */
+}
+
+.productCard h4 {
+  font-size: 1.2rem;
+  color: rgb(163, 163, 163);
+  margin-top: .2rem;
+}
+.productCard p {
+  font-size: 1.4rem
 }
