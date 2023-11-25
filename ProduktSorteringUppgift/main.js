@@ -171,33 +171,30 @@ filterProds.addEventListener('click', () => {
      let colorCheck = document.querySelector("[name='color']:checked").value;
      console.log(colorCheck);
 
-     let colorBla = document.getElementsByName('color');
-     let multiColor = Array.from(colorBla);
-     console.log(multiColor);
-    let multiColorCheck = multiColor.filter((color) => {
+    //  let colorBla = document.getElementsByName('color');
+
+    // let multiColor = Array.from(document.getElementsByName('color'));
+
+    // Create an array from nodelist gatherd by checkbox name attribute then filter on checked checkboxes!
+    let multiColorCheck = Array.from(document.getElementsByName('color')).filter((color) => {
         return(
             color.checked
             )
     });
 
-    multiColorCheck.forEach((color) => {
-        console.log(color.value);
-    });
-    for(i = 0; multiColorCheck.length < i; i++){
-        console.log(multiColorCheck[i].value);
-    };
-    //  let colorCheckBoxes = Array.from(colorCheck);
-    //  console.log(colorCheckBoxes); colorCheck.toUpperCase()
+   
+  
 
     
      let filterdProducts = productsArr.filter((prods) => {
         return ( 
             (categoryDrop.toUpperCase() === 'ALL' || prods.productCategory.toUpperCase() === categoryDrop.toUpperCase()) &&
             (brandRadio.toUpperCase() === 'ALL' || prods.productBrand.toUpperCase() === brandRadio.toUpperCase()) &&
-           (colorCheck.toUpperCase() === 'ALL' || prods.productColorBox.toUpperCase() === colorCheck.toUpperCase())
+           (colorCheck.toUpperCase() === 'ALL' || multiColorCheck.some((color) => color.value.toUpperCase() === prods.productColorBox.toUpperCase()))
         );
      });
 
+    
      console.log(filterdProducts);
    
 
